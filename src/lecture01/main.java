@@ -26,57 +26,58 @@ public class main {
         }
         System.out.println(sum);
         //課題5
-        public class main{
+        public class Exercise01_5 {
             public static void main(String[] args) {
                 int[] score = {41, 85, 72, 38, 80};
-                int num=5;
-                for (int i = 0; i < 5; i++) {
-                    System.out.println("student " + i + " 's point is " + score[i] + "");
-                    if (score[i] >= 90) {
-                        System.out.println("秀");
-                    } else if (score[i] >= 80) {
-                        System.out.println("優");
-                    } else if (score[i] >= 70) {
-                        System.out.println("良");
-                    } else if (score[i] >= 60) {
-                        System.out.println("可");
-                    } else {
-                        System.out.println("不可");
+                for (int i = 0; i < score.length; i++) {
+                    if (100 >= score[i] && score[i] >= 90) {
+                        System.out.println(i + "番 " + score[i] + "点 秀");
+                    }else if (90 > score[i] && score[i] >= 80) {
+                        System.out.println(i + "番 " + score[i] + "点 優");
+                    }else if (80 > score[i] && score[i] >= 70) {
+                        System.out.println(i + "番 " + score[i] + "点 良");
+                    }else if (70 > score[i] && score[i] >= 60) {
+                        System.out.println(i + "番 " + score[i] + "点 可");
+                    }else {
+                        System.out.println(i + "番 " + score[i] + "点 不可");
                     }
                 }
-                int ma=max(score);
-                System.out.println("最高点 "+ma);
-                int mi=min(score);
-                System.out.println("最低点 "+mi);
-                double av=average(num,score);
-                System.out.println("平均点 "+av);
+                System.out.println(".....");
+                System.out.println("最高点:" + max(score) + "点");
+                System.out.println("最低点:" + min(score) + "点");
+                System.out.println("平均点:" + average(score) + "点");
+                System.out.println(".....");
             }
-        private static int max(int score) {
-            int ma=score[0];
-            for(int i = 0; i < 5; i++){
-                if(ma<score[i]){
-                    ma=score[i];
+
+            static int max(int[] score) {
+                int maxScore = score[0];
+
+                for (int i = 1; i < score.length; i++) {
+                    if (maxScore < score[i]) maxScore = score[i];
                 }
+                return maxScore;
             }
-            return ma;
-        }
-        private static int min(int score) {
-            int mi=score[0];
-            for(int i = 0; i < 5; i++){
-                if(mi>score[i]){
-                    mi=score[i];
+
+            static int min(int[] score) {
+                int minScore = score[0];
+
+                for (int i = 1; i < score.length; i++) {
+                    if (minScore > score[i]) minScore = score[i];
                 }
+                return minScore;
             }
-            return mi;
-        }
-        private static double average(int num,int score[]) {
-            double av=0.0;
-                for(int i = 0; i < 5; i++){
-                av=av+score[i];
+
+            static double average(int[] score) {
+                double ave;
+                double sum = 0;
+
+                for (int s : score) { // 拡張for文（score配列から要素を取り出し、変数sに格納。配列から要素を全て取り出すまで繰り返す。）
+                    sum += s;
                 }
+                ave = sum / (double) score.length;
+                return ave;
             }
-            av=av/(double)number;
-            return av;
+
         }
         //本来ならここに処理を書く
         //スラッシュを2つ打つと、コメント文として認識される。
