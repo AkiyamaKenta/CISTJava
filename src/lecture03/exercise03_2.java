@@ -20,7 +20,7 @@ public class exercise03_2 {
 
         System.out.println("入力した文字列:");
         for(String str : list) { // listの要素を一つずつstrに取り出す。
-            System.out.println("[" + list.indexOf(str) + "] " + str);
+            System.out.println("["+list.indexOf(str)+"]"+str);
         }
     }
 }
