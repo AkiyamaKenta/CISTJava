@@ -1,14 +1,17 @@
 package lecture07;
 
 public class Move {
-    protected String name;
+    String name;
 
-    public Move (String name) {
+    Move(String name) {
         this.name = name;
     }
 
-    public String getName () {
-        return this.name;
+    public void attack(Monster monster, Monster enemy) {
+        //
     }
 
+    public String getName() {
+        return name;
+    }
 }
